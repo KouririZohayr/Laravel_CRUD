@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', "App\Http\Controllers\CRUD@Selection");
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/update/{id}', function ($id) {
+    return view('update',['id'=>$id]);
 });
+Route::post('/update/{id}', 'App\Http\Controllers\CRUD@update');
