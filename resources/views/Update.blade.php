@@ -45,14 +45,14 @@
             <input name="dateacha" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="date" >
           </div>
           </div>
-          <div class="flex flex-wrap  mb-6 ">
+          <div class="flex flex-wrap   ">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
               PRIX
             </label>
             <input name="prix" class="appearance-none block w-full mb-10 bg-gray-200 text-gray-700 border  border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="90210">
           </div>
-          <div    class="mt-10 ">
-            <input type="submit" class="bg-blue-500 hover:bg-blue-700 w-53/6  text-white font-bold py-2 my-16 mx-96 px-4 border border-blue-700 rounded"  placeholder="update" >
+          <div    class=" ">
+            <input type="submit" class="bg-blue-500 hover:bg-blue-700 w-53/6  text-white font-bold py-2 my-2 mx-96 px-4 border border-blue-700 rounded"  placeholder="update" >
         </div>
         </div>
        
