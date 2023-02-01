@@ -75,9 +75,9 @@
                             </td>
                             <td class="text-sm font-light px-6 py-4 whitespace-nowrap ">
                                 
-                                  <a href="/update/{{ $oridnateur->ido }}" class="bg-green-500 hover:bg-green-900 text-white font-bold py-2 px-4 border border-green-500 rounded">
+                                  <a href="/update/{{ $oridnateur->ido }}" class="bg-green-500 mx-5 hover:bg-green-900 text-white font-bold py-2 px-4 border border-green-500 rounded">
                                     UPDATE
-                                  <a  class="bg-red-500 hover:bg-red-900 text-white font-bold py-2 px-4 border border-red-500 rounded">
+                                  <a href="/delete/{{ $oridnateur->ido }}" class="bg-red-500 hover:bg-red-900 text-white font-bold py-2 px-4 border border-red-500 rounded">
                                     DELET
                                   </a>
                             </td>

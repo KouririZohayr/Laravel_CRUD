@@ -30,4 +30,8 @@ class CRUD extends Controller
         ));
         return redirect('/');
     }
+    public function delete($id){
+        DB::table('ordinateur')->where('ido',$id)->delete();
+        return redirect('/');
+    }
 }

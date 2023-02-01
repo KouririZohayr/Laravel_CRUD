@@ -22,3 +22,4 @@ Route::get('/ajouter', function () {
     return view('insert');
 });
 Route::post('/ajouter', 'App\Http\Controllers\CRUD@ajouter');
+Route::get('/delete/{id}', 'App\Http\Controllers\CRUD@delete');
