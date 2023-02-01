@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ajoute</title>
-    @vite('resources/css/app.css')
-</head>
-<body>
+@extends('Default')
+@section('section')
     <div class="container mx-auto">
         <h1 class="text-6xl font-bold text-red-600 my-16 ">AJOUTER ORDINATEUR </h1>
         <form class="w-full max-w-lg mx-16" action="/admin/ajouter" method="POST">
@@ -50,8 +42,6 @@
               <div    class=" ">
                 <input type="submit" class="bg-blue-500 hover:bg-blue-700 w-53/6  text-white font-bold py-2 my-16 mx-96 px-4 border border-blue-700 rounded"  placeholder="update" >
             </div>
-            </div>
           </form>
         </div>
-</body>
-</html>
+@endsection
