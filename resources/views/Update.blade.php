@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>update</title>
     @vite('resources/css/app.css')
 </head>
 <body>
@@ -18,7 +18,7 @@
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
               ID Ordinateur
             </label>
-            <input name="ido" value="{{ $id }}"   id="grid-first-name" type="text" placeholder="{{ $id }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"  id="grid-first-name" type="text" placeholder="{{ $id }}">
+            <input name="ido" readonly value="{{ $id }}"   id="grid-first-name" type="text" placeholder="{{ $id }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"  id="grid-first-name" type="text" placeholder="{{ $id }}">
             <p class="text-red-500 text-xs italic"></p>
           </div>
           <div class="w-full md:w-1/2 px-3">

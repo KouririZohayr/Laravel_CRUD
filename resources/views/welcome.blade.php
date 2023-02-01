@@ -24,6 +24,11 @@
         <div class="flex flex-col container mx-auto mt-52 ">
             
             <h1 class="text-4xl  font-bold text-red-600"> Table Ordinateur</h1>
+            <div class="flex   justify-end ">
+            <a  href="/ajouter" class="bg-sky-500  text-center  w-1/6 h-12 hover:bg-sky-900 text-white font-bold py-2 px-4 border border-sky-500 rounded">
+                Ajouter Ordinateur
+              </a>
+            </div>
             <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
               <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
                 <div class="overflow-hidden">
@@ -72,7 +77,7 @@
                                 
                                   <a href="/update/{{ $oridnateur->ido }}" class="bg-green-500 hover:bg-green-900 text-white font-bold py-2 px-4 border border-green-500 rounded">
                                     UPDATE
-                                  <a class="bg-red-500 hover:bg-red-900 text-white font-bold py-2 px-4 border border-red-500 rounded">
+                                  <a  class="bg-red-500 hover:bg-red-900 text-white font-bold py-2 px-4 border border-red-500 rounded">
                                     DELET
                                   </a>
                             </td>

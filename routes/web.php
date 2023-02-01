@@ -18,3 +18,7 @@ Route::get('/update/{id}', function ($id) {
     return view('update',['id'=>$id]);
 });
 Route::post('/update/{id}', 'App\Http\Controllers\CRUD@update');
+Route::get('/ajouter', function () {
+    return view('insert');
+});
+Route::post('/ajouter', 'App\Http\Controllers\CRUD@ajouter');
