@@ -25,7 +25,7 @@
             
             <h1 class="text-4xl  font-bold text-red-600"> Table Ordinateur</h1>
             <div class="flex   justify-end ">
-            <a  href="/ajouter" class="bg-sky-500  text-center  w-1/6 h-12 hover:bg-sky-900 text-white font-bold py-2 px-4 border border-sky-500 rounded">
+            <a  href="/admin/ajouter" class="bg-sky-500  text-center  w-1/6 h-12 hover:bg-sky-900 text-white font-bold py-2 px-4 border border-sky-500 rounded">
                 Ajouter Ordinateur
               </a>
             </div>
@@ -88,8 +88,32 @@
                 </div>
               </div>
             </div>
+            <div class="flex justify-center mt-10">
+            <nav aria-label="Page navigation example flex  ">
+              <ul class="inline-flex -space-x-px">
+                <li>
+                  <a href="#"   target="blank"  aria-current="page" class="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
+                </li>
+                @php ($cmp =0)
+                @for ($i = 5; $i < $nbrordi; $i+=4)
+                  <li>
+                    <a href="/{{ $i }}"  target="blank"  class="px-3 py-2 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">{{ $cmp=$cmp+1 }}</a>
+                  </li>
+                @endfor
+                <li>
+                  <a href="#"  target="blank"  class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
+                </li>
+              </ul>
+            </nav>
           </div>
-            
+          
+          </div>
+          <div class="flex justify-center mt-5">
+            <a  href="/{{ $nbrordi }}" class="bg-sky-500  text-center  w-1/6 h-12 hover:bg-sky-900 text-white font-bold py-2 px-4 border border-sky-500 rounded">
+              AFFICHER TOUT
+            </a>
+          </div>
+          
         </div>
      
     </body>

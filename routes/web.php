@@ -12,14 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', "App\Http\Controllers\CRUD@Selection");
-
-Route::get('/update/{id}', function ($id) {
+Route::get('/{pagination?}', "App\Http\Controllers\CRUD@Selection");
+Route::get('/update/{id}', "App\Http\Controllers\CRUD@remplire");
+/* Route::get('/update/{id}', function ($id) {
     return view('update',['id'=>$id]);
-});
+}); */
 Route::post('/update/{id}', 'App\Http\Controllers\CRUD@update');
-Route::get('/ajouter', function () {
+Route::get('/admin/ajouter', function () {
     return view('insert');
 });
-Route::post('/ajouter', 'App\Http\Controllers\CRUD@ajouter');
+Route::post('/admin/ajouter', 'App\Http\Controllers\CRUD@ajouter');
 Route::get('/delete/{id}', 'App\Http\Controllers\CRUD@delete');
