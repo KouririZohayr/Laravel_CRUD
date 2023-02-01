@@ -15,15 +15,20 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
+                
+                background-image: url("bg.jpg");
+                background-repeat: no-repeat;
+                background-size: 100% , 100%;
+
             }
         </style>
     </head>
     <body class="antialiased">
       
 
-        <div class="flex flex-col container mx-auto mt-20 ">
-            
-            <h1 class="text-4xl  font-bold text-red-600"> Table Ordinateur</h1>
+        <div class="flex flex-col container mx-auto mt-20   ">
+          <p class="text-6xl  font-bold text-red-600"> TP CRUD</p>
+            <p class="text-2xl  font-bold text-gray-400"> Table Ordinateur</p>
             <div class="flex   justify-end ">
             <a  href="/admin/ajouter" class="bg-sky-500  text-center  w-1/6 h-12 hover:bg-sky-900 text-white font-bold py-2 px-4 border border-sky-500 rounded">
                 Ajouter Ordinateur
@@ -32,7 +37,7 @@
             <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
               <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
                 <div class="overflow-hidden">
-                  <table class="min-w-full text-center">
+                  <table class="min-w-full text-center opacity-90">
                     <thead class="border-b bg-gray-800">
                       <tr>
                         <th scope="col" class="text-sm font-medium text-white px-6 py-4">
@@ -71,13 +76,13 @@
                                 {{ $oridnateur->marque }}
                             </td>
                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                {{ $oridnateur->prix }}
+                                {{ $oridnateur->prix }} MDH
                             </td>
                             <td class="text-sm font-light px-6 py-4 whitespace-nowrap ">
                                 
                                   <a href="/update/{{ $oridnateur->ido }}" class="bg-green-500 mx-5 hover:bg-green-900 text-white font-bold py-2 px-4 border border-green-500 rounded">
                                     UPDATE
-                                  <a href="/delete/{{ $oridnateur->ido }}" class="bg-red-500 hover:bg-red-900 text-white font-bold py-2 px-4 border border-red-500 rounded">
+                                  <a href="/delete/{{ $oridnateur->ido }}" onclick="return myFunction();" class="bg-red-500 hover:bg-red-900 text-white font-bold py-2 px-4 border border-red-500 rounded">
                                     DELET
                                   </a>
                             </td>
@@ -118,3 +123,9 @@
      
     </body>
 </html>
+<script>
+  function myFunction() {
+      if(!confirm("Are You Sure to delete this"))
+      event.preventDefault();
+  }
+ </script>
