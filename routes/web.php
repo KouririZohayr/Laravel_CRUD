@@ -13,13 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/{pagination?}', "App\Http\Controllers\CRUD@Selection");
+
 Route::get('/update/{id}', "App\Http\Controllers\CRUD@remplire");
-/* Route::get('/update/{id}', function ($id) {
-    return view('update',['id'=>$id]);
-}); */
+
 Route::post('/update/{id}', 'App\Http\Controllers\CRUD@update');
+
 Route::get('/admin/ajouter', function () {
     return view('insert');
 });
+
 Route::post('/admin/ajouter', 'App\Http\Controllers\CRUD@ajouter');
+
 Route::get('/delete/{id}', 'App\Http\Controllers\CRUD@delete');
+
+Route::post('/admin/recherche', 'App\Http\Controllers\CRUD@recherche');

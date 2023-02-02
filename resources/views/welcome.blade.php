@@ -15,29 +15,37 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
-                
-                background-image: url("bg.jpg");
-                background-repeat: no-repeat;
-                background-size: 100% , 100%;
-
+               
             }
         </style>
     </head>
-    <body class="antialiased">
-      
-
-        <div class="flex flex-col container mx-auto mt-20   ">
+    <body class="antialiased  bg-slate-200">
+        <div class="flex flex-col container mx-auto mt-20  " >
           <p class="text-6xl  font-bold text-red-600"> TP CRUD</p>
             <p class="text-2xl  font-bold text-gray-400"> Table Ordinateur</p>
             <div class="flex   justify-end ">
             <a  href="/admin/ajouter" class="bg-sky-500  text-center  w-1/6 h-12 hover:bg-sky-900 text-white font-bold py-2 px-4 border border-sky-500 rounded">
                 Ajouter Ordinateur
               </a>
+             
             </div>
+            <div class="flex justify-center mt-5">
+            <form class="  w-4/6" action="/admin/recherche" method="POST">   
+              @csrf
+              <label for="default-search" class="mb-2 text-sm font-medium  text-gray-900 sr-only dark:text-white">Search</label>
+              <div class="relative">
+                  <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                      <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                  </div>
+                  <input type="search" name="search" id="default-search" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required>
+                  <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+              </div>
+            </div>
+          </form>
             <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
               <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
                 <div class="overflow-hidden">
-                  <table class="min-w-full text-center opacity-90">
+                  <table class="min-w-full text-center ">
                     <thead class="border-b bg-gray-800">
                       <tr>
                         <th scope="col" class="text-sm font-medium text-white px-6 py-4">
@@ -79,7 +87,6 @@
                                 {{ $oridnateur->prix }} MDH
                             </td>
                             <td class="text-sm font-light px-6 py-4 whitespace-nowrap ">
-                                
                                   <a href="/update/{{ $oridnateur->ido }}" class="bg-green-500 mx-5 hover:bg-green-900 text-white font-bold py-2 px-4 border border-green-500 rounded">
                                     UPDATE
                                   <a href="/delete/{{ $oridnateur->ido }}" onclick="return myFunction();" class="bg-red-500 hover:bg-red-900 text-white font-bold py-2 px-4 border border-red-500 rounded">

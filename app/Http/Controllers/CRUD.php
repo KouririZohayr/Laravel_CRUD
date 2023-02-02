@@ -57,4 +57,13 @@ class CRUD extends Controller
         DB::table('ordinateur')->where('ido',$id)->delete();
         return redirect('/');
     }
+    public function recherche(Request $request){
+        $ordi = DB::table('ordinateur')->where('ido', 'like', '%' . $request->input('search') . '%')
+                ->orWhere('libele', 'like', '%' . $request->input('search'). '%')
+                ->orWhere('marque', 'like', '%' . $request->input('search') . '%')
+                ->orWhere('prix', 'like', '%' . $request->input('search') . '%')->get();
+                $cmp=$ordi->count();
+                return view("welcome",["ordi"=>$ordi,'nbrordi'=>$cmp]);
+
+    }
 }
