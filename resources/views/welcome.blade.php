@@ -27,7 +27,6 @@
             <a  href="/admin/ajouter" class="bg-sky-500  text-center  w-1/6 h-12 hover:bg-sky-900 text-white font-bold py-2 px-4 border border-sky-500 rounded">
                 Ajouter Ordinateur
               </a>
-             
             </div>
             <div class="flex justify-center mt-5">
             <form class="  w-4/6" action="/admin/recherche" method="POST">   
@@ -49,16 +48,12 @@
                   
                     <div class="flex items-center justify-center  bg-blue-500 text-white text-sm font-bold px-4 py-3" role="alert">
                       <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.432 0c1.34 0 2.01.912 2.01 1.957 0 1.305-1.164 2.512-2.679 2.512-1.269 0-2.009-.75-1.974-1.99C9.789 1.436 10.67 0 12.432 0zM8.309 20c-1.058 0-1.833-.652-1.093-3.524l1.214-5.092c.211-.814.246-1.141 0-1.141-.317 0-1.689.562-2.502 1.117l-.528-.88c2.572-2.186 5.531-3.467 6.801-3.467 1.057 0 1.233 1.273.705 3.23l-1.391 5.352c-.246.945-.141 1.271.106 1.271.317 0 1.357-.392 2.379-1.207l.6.814C12.098 19.02 9.365 20 8.309 20z"/></svg>
-                      <p>Votre recherche n'a donné aucun résultat..</p>
-                    
+                      <p>Votre recherche n'a donné aucun résultat..</p>                 
                   </div>
                   @else
                   <table class="min-w-full text-center ">
                     <thead class="border-b bg-gray-800">
-                      <tr>
-                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                          #
-                        </th>
+                      <tr>  
                         <th scope="col" class="text-sm font-medium text-white px-6 py-4">
                           ID ORDINATEUR
                         </th>
@@ -77,11 +72,10 @@
                       </tr>
                     </thead class="border-b">
                     <tbody>
-                        @php ($i = 0)
-                       
+ 
                         @foreach ($ordi  as $oridnateur)
                         <tr class="bg-white border-b">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $i=$i+1 }}</td>
+                            
                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                 {{ $oridnateur->ido }}
                             </td>
@@ -105,36 +99,23 @@
                         @endforeach
                     </tbody>
                   </table>
-
                   @endif
-                                  </div>
+              </div>
               </div>
             </div>
             <div class="flex justify-center mt-10">
             <nav aria-label="Page navigation example flex  ">
               <ul class="inline-flex -space-x-px">
-                <li>
-                  <a href="#"   target="blank"  aria-current="page" class="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
-                </li>
-                @php ($cmp =0)
-                @for ($i = 4; $i < $nbrordi; $i+=4)
-                  <li>
-                    <a href="/{{ $i }}"  target="blank"  class="px-3 py-2 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">{{ $cmp=$cmp+1 }}</a>
-                  </li>
-                @endfor
-                <li>
-                  <a href="#"  target="blank"  class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
-                </li>
+    
+                {{ $ordi->links('vendor.pagination.tailwind') }}
+             
+               
               </ul>
             </nav>
           </div>
           
           </div>
-          <div class="flex justify-center mt-5">
-            <a  href="/{{ $nbrordi }}" class="bg-sky-500  text-center  w-1/6 h-12 hover:bg-sky-900 text-white font-bold py-2 px-4 border border-sky-500 rounded">
-              AFFICHER TOUT
-            </a>
-          </div>
+          
           
         </div>
      

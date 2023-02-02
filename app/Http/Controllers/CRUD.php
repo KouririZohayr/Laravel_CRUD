@@ -13,9 +13,9 @@ class CRUD extends Controller
         }else{
             $pagination=$request->pagination;
         }
-        $ordi = DB::table('ordinateur')->paginate($pagination);
+        $ordi = DB::table('ordinateur')->paginate(5);
         $nbrordi = DB::table('ordinateur')->count();
-        return view("welcome",["ordi"=>$ordi,'nbrordi'=>$nbrordi]);
+        return view("welcome",["ordi"=>$ordi]);
     }
     public function ajouter(Request $request){
         $request->validate([
@@ -61,9 +61,9 @@ class CRUD extends Controller
         $ordi = DB::table('ordinateur')->where('ido', 'like', '%' . $request->input('search') . '%')
                 ->orWhere('libele', 'like', '%' . $request->input('search'). '%')
                 ->orWhere('marque', 'like', '%' . $request->input('search') . '%')
-                ->orWhere('prix', 'like', '%' . $request->input('search') . '%')->get();
-                $cmp=$ordi->count();
-                return view("welcome",["ordi"=>$ordi,'nbrordi'=>$cmp]);
+                ->orWhere('prix', 'like', '%' . $request->input('search') . '%')->paginate();
+        
+        return view("welcome",["ordi"=>$ordi]);
 
     }
 }
