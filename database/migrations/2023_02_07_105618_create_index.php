@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ordinateur', function (Blueprint $table) {
-            $table->id('ido');
-            $table->string('marque');
-            $table->string('libele');
-            $table->date('dateacha');
-            $table->float('prix');
-            $table->timestamps();
-        });
+        Schema::table('auteur', function (Blueprint $table) {
+            $table->integer('codea')->unique()->change();
+            });
     }
 
     /**
@@ -30,6 +25,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ordinateur');
+        Schema::dropIfExists('index');
     }
 };

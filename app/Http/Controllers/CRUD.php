@@ -13,8 +13,8 @@ class CRUD extends Controller
         }else{
             $pagination=$request->pagination;
         }
-        $ordi = DB::table('ordinateur')->paginate(5);
-        $nbrordi = DB::table('ordinateur')->count();
+        $ordi = DB::table('ordinateurs')->paginate(5);
+        $nbrordi = DB::table('ordinateurs')->count();
         return view("welcome",["ordi"=>$ordi]);
     }
     public function ajouter(Request $request){
@@ -25,7 +25,7 @@ class CRUD extends Controller
             'dateacha' => 'required',
             'prix' => 'required',
         ]);
-        DB::table('ordinateur')->insert(array(
+        DB::table('ordinateurs')->insert(array(
             'ido'=>$request->input('ido'),
             'libele'=>$request->input('libele'),
             'marque'=>$request->input('marque'),
@@ -35,7 +35,7 @@ class CRUD extends Controller
         return redirect('/');
     }
     public function update(Request $request){
-        DB::table('ordinateur')->where('ido',$request->input('ido'))->update(array(
+        DB::table('ordinateurs')->where('ido',$request->input('ido'))->update(array(
             'libele'=>$request->input('libele'),
             'marque'=>$request->input('marque'),
             'dateacha'=>$request->input('dateacha'),
@@ -44,21 +44,21 @@ class CRUD extends Controller
         return redirect('/');
     }
     public function remplire($id){
-        $ordinateur = DB::table('ordinateur')->where('ido',$id)->get();
+        $ordinateurs = DB::table('ordinateurs')->where('ido',$id)->get();
             $data=[];
-            $data['ido']=$ordinateur[0]->ido;
-            $data['libele']=$ordinateur[0]->libele;
-            $data['marque']=$ordinateur[0]->marque;
-            $data['dateacha']=$ordinateur[0]->dateacha;
-            $data['prix']=$ordinateur[0]->prix;
+            $data['ido']=$ordinateurs[0]->ido;
+            $data['libele']=$ordinateurs[0]->libele;
+            $data['marque']=$ordinateurs[0]->marque;
+            $data['dateacha']=$ordinateurs[0]->dateacha;
+            $data['prix']=$ordinateurs[0]->prix;
         return view('Update',$data);
     }
     public function delete($id){
-        DB::table('ordinateur')->where('ido',$id)->delete();
+        DB::table('ordinateurs')->where('ido',$id)->delete();
         return redirect('/');
     }
     public function recherche(Request $request){
-        $ordi = DB::table('ordinateur')->where('ido', 'like', '%' . $request->input('search') . '%')
+        $ordi = DB::table('ordinateurs')->where('ido', 'like', '%' . $request->input('search') . '%')
                 ->orWhere('libele', 'like', '%' . $request->input('search'). '%')
                 ->orWhere('marque', 'like', '%' . $request->input('search') . '%')
                 ->orWhere('prix', 'like', '%' . $request->input('search') . '%')->paginate();

@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('_examen', function (Blueprint $table) {
-            $table->id('CodeExam');
-            $table->string('libele',30);
-            $table->integer('duree');
-            $table->date('dateExam');
-            $table->timestamps();
+        Schema::table('livres',function(Blueprint  $table){
+            $table->integer('nombre_page')->after('prix');
         });
-        
     }
 
     /**
@@ -30,6 +25,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_examen');
+        //
     }
 };
